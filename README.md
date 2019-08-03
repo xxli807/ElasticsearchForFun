@@ -1,5 +1,5 @@
 # ElasticsearchForFun
 
-## asp.net core
+## asp.net core / python
 ## Elasticsearch client
 ## for fun
