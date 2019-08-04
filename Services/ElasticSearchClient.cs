@@ -1,4 +1,5 @@
-﻿using ElasticsearchForFun.Settings;
+﻿using ElasticsearchForFun.Db;
+using ElasticsearchForFun.Settings;
 using Microsoft.Extensions.Options;
 using Nest;
 using System;
@@ -27,6 +28,12 @@ namespace ElasticsearchForFun.Services
             var client = new ElasticClient(settings);
 
 
+            client.Indices.Create("firstIndex", c =>
+            c.Map<Test>(m =>
+            m.Properties(ps =>
+                ps.Text(s => s.Name(n => n.Name))
+               .Text(s=>s.Name(n=>n.Text)))));
+            
 
 
         }
