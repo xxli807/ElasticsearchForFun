@@ -1,5 +1,4 @@
 ﻿using ElasticsearchForFun.Db;
-using Nest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ElasticsearchForFun.Services
 {
-    public interface IElasticSearchClient
+    public interface ISearchService
     {
-        // setupSearch
-        ElasticClient InitClient(); 
+        IEnumerable<Test> Search(string searchTerm);
     }
 }
